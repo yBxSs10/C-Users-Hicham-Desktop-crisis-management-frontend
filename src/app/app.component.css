@@ -1,0 +1,21 @@
+.main-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+
+  .app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  button {
+    font-size: 14px;
+    color: white;
+  }
+}
