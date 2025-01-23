@@ -1,31 +1,33 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
-  standalone: true,
   imports: [
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    FormsModule,
-  ],
+    FormsModule
+  ]
 })
 export class LoginPageComponent {
+  name: string = '';
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  toggleForm(formType: string) {
+    const container = document.getElementById('container');
+    if (formType === 'signUp') {
+      container?.classList.add('right-panel-active');
+    } else {
+      container?.classList.remove('right-panel-active');
+    }
+  }
 
-  login() {
-    this.router.navigate(['/home']);
+  signUp() {
+    console.log('Sign Up:', this.name, this.email, this.password);
+  }
+
+  signIn() {
+    console.log('Sign In:', this.email, this.password);
   }
 }
