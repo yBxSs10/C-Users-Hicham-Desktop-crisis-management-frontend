@@ -1,0 +1,13 @@
+<mat-card class="signalement-card" *ngIf="signalementContent">
+  <h2>{{ signalementContent.title }}</h2>
+  <p>{{ signalementContent.description }}</p>
+  <div *ngFor="let step of signalementContent.steps">
+    <h4>{{ step.title }}</h4>
+    <p>{{ step.details }}</p>
+  </div>
+</mat-card>
+
+<mat-card class="error-card" *ngIf="!signalementContent">
+  <h2>Cas inconnu</h2>
+  <p>Le cas demandé n'existe pas ou n'a pas encore été défini.</p>
+</mat-card>

@@ -16,6 +16,10 @@ export class HomePageComponent {
   constructor(private router: Router) {}
 
   navigateToSignalement(caseType: number) {
-    this.router.navigate(['/signalement'], { queryParams: { case: caseType } });
+    if (caseType === 1) {
+      this.router.navigate(['/signalement']);
+    } else if (caseType === 2) {
+      this.router.navigate(['/nouvelle-crise']);
+    }
   }
 }
